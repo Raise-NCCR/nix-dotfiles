@@ -43,28 +43,28 @@
     LC_TIME = "ja_JP.UTF-8";
   };
 
-	i18n.inputMethod = {
-		enablesd = "fcitx5";
-		fcitx5.addons = [pkgs.fcitx5-mozc];
-	};
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = [pkgs.fcitx5-mozc];
+  };
 
-	fonts = {
-		fonts = with pkgs; {
-			noto-fonts-cjk-serif
-    	noto-fonts-cjk-sans
-    	noto-fonts-emoji
-    	nerdfonts
-		];
-		fontDir.enable = true;
-		fontconfig = {
-			defaultFonts = {
-				serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
+  fonts = {
+    fonts = with pkgs; [
+      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      nerdfonts
+    ];
+    fontDir.enable = true;
+    fontconfig = {
+      defaultFonts = {
+        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
         sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
         monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
-			};
-		};
-	};
+      };
+    };
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -117,24 +117,24 @@
     shell = pkgs.zsh;
   };
 
-	programs = {
-		git = {
-			enable = true;
-		};
-		neovim = {
-			enable = true;
-			defaultEditor = true;
-			viAilas = true;
-			vimAlias = true;
-		};
-		noisetorch.enable = true;
-		starship = {
-			enable = true;
-		};
-		zsh = {
-			enable = true;
-		};
-	};
+  programs = {
+    git = {
+      enable = true;
+    };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
+    noisetorch.enable = true;
+    starship = {
+      enable = true;
+    };
+    zsh = {
+      enable = true;
+    };
+  };
 
 
   # List packages installed in system profile. To search, run:
@@ -172,32 +172,32 @@
   system.stateVersion = "23.05"; # Did you read the comment?
   nix = {
     settings = {
-			auto-optimise-store = true;
+      auto-optimise-store = true;
       experimental-features = ["nix-command" "flakes"];
     };
-		gc = {
-			automatic = true;
-			dates = "weekly";
-			options = "--delete-older-than 7d";
-		};
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
-	nixpkgs.config.allowUnfree = true;
-	services.tailscale.enable = true;
-	networking.firewall = {
-		enable = true;
-		trustedInterfaces = ["tailscale0"];
-		allowedUDPPorts = [config.services.tailscale.port];
-	};
-	virtualisation = {
-		docker = {
-			enable = true;
-			rootless = {
-				enable = true;
-				setSocketVariables = true;
-			};
-		};
-	};
-	services.flatpak.enable = true;
-	xdg.portal.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  services.tailscale.enable = true;
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = ["tailscale0"];
+    allowedUDPPorts = [config.services.tailscale.port];
+  };
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
 }
