@@ -3,6 +3,7 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+    withNodeJs = true;
     plugins = with pkgs.vimPlugins; [
       # Treesitter
       (nvim-treesitter.withPlugins (plugins:
@@ -12,7 +13,12 @@
           # ...
         ]))
       telescope-nvim
-      # ...
+      vim-nix {
+        plugin = kanagawa-nvim;
+        config = ''
+          colorscheme kanagawa
+          '';
+      }
     ];
     extraPackages = with pkgs; [
       ripgrep
