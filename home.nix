@@ -4,8 +4,10 @@
     ./neovim.nix
     ./direnv.nix
     ./development.nix
+    ./python.nix
     ./browser.nix
     ./apps.nix
+    ./command.nix
   ];
   home = rec {
     username = "raise";

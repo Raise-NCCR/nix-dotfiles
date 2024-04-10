@@ -4,8 +4,7 @@
     viAlias = true;
     vimAlias = true;
     withNodeJs = true;
-    plugins = with pkgs.vimPlugins; [
-      # Treesitter
+    plugins = with pkgs.vimPlugins; [      # Treesitter
       (nvim-treesitter.withPlugins (plugins:
         with plugins; [
           tree-sitter-markdown
@@ -19,6 +18,8 @@
           colorscheme kanagawa
           '';
       }
+      vim-plug
+      coc-rust-analyzer
     ];
     extraPackages = with pkgs; [
       ripgrep
