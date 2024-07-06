@@ -43,7 +43,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 
 " ファイル検索
