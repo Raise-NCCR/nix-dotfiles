@@ -6,7 +6,7 @@ set updatetime=250  " 反映時間を短くする(デフォルトは4000ms)
 set belloff=all
 
 " VSCodeライクなカラースキームにする
-colorscheme codedark
+colorscheme darkblue
 
 "" キーマップ
 " タブを作成する
