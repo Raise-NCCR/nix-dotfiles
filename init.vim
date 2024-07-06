@@ -5,9 +5,6 @@ set backspace=indent,eol,start  " バックスペースを有効にする
 set updatetime=250  " 反映時間を短くする(デフォルトは4000ms)
 set belloff=all
 
-" VSCodeライクなカラースキームにする
-colorscheme darkblue
-
 "" キーマップ
 " タブを作成する
 nnoremap tc :tabnew<CR>
@@ -54,6 +51,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+" VSCodeライクなカラースキームにする
+colorscheme codedark
 
 """ vim-airline
 " カラーテーマ
