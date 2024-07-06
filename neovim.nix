@@ -25,6 +25,5 @@
       ripgrep
       # ...
     ];
-    extraLuaConfig = builtins.readFile ./init.vim; # 単一の文字列で与える
   };
 }
