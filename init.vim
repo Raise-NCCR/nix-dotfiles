@@ -43,7 +43,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'build': 'coc#util#install()'}
 Plug 'itchyny/lightline.vim'
 
 " ファイル検索
