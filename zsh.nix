@@ -7,7 +7,7 @@
     syntaxHighlighting.enable = true; # シンタックスハイライト
     shellAliases = {
       myHome-flake = "home-manager switch --flake .#myHome";
-      dWork = "/home/raise/workspace"
+      dWork = "/home/raise/workspace";
     };
   };
 }
