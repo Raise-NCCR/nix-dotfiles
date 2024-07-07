@@ -18,6 +18,8 @@ nnoremap tp :tabp<CR>
 nnoremap tn :tabn<CR>
 " タブを閉じる
 nnoremap tx :tabclose<CR>
+" 括弧の補完
+inoremap { {<CR><BS>}<Esc>ko
 
 """ plugin
 call plug#begin('~/.vim/plugged')
@@ -33,6 +35,10 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'yuki-yano/fern-preview.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'airblade/vim-gitgutter'
+
+" その他UI
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'jiangmiao/auto-pairs'
 
 " c-lang
 Plug 'vim-scripts/DoxygenToolkit.vim'
