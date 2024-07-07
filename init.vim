@@ -6,8 +6,8 @@ set updatetime=250  " 反映時間を短くする(デフォルトは4000ms)
 set belloff=all
 
 set expandtab
-set tabstop = 4
-set shiftwidth = 4
+set tabstop=4
+set shiftwidth=4
 
 "" キーマップ
 " タブを作成する
