@@ -9,5 +9,5 @@
         nodejs
         rust-bin.stable.latest.default
     ];
-};
+}
 
