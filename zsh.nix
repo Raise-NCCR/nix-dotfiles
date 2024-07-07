@@ -8,6 +8,7 @@
     shellAliases = {
       myHome-flake = "home-manager switch --flake .#myHome";
       dw = "/home/raise/workspace";
+      dd = "/home/raise/.dotfiles";
     };
   };
 }
