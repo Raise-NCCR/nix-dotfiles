@@ -17,6 +17,7 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
+    timeout = -1;
     default = "saved";
   };
 
@@ -139,11 +140,18 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
+  services.openssh = {
+    enable = true;
+    ports = [22];
+    settings.PasswordAuthentication = true;
+    extraConfig = ''
+      ClientAliveInterVal 60
+      ClientAliveCountMax 30
+    '';
+  };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
