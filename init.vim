@@ -5,9 +5,8 @@ set backspace=indent,eol,start  " バックスペースを有効にする
 set updatetime=250  " 反映時間を短くする(デフォルトは4000ms)
 set belloff=all
 
-set expandtab
-set tabstop=4
-set shiftwidth=4
+" VSCodeライクなカラースキームにする
+colorscheme codedark
 
 "" キーマップ
 " タブを作成する
@@ -18,8 +17,6 @@ nnoremap tp :tabp<CR>
 nnoremap tn :tabn<CR>
 " タブを閉じる
 nnoremap tx :tabclose<CR>
-" 括弧の補完
-inoremap { {<CR><BS>}<Esc>ko
 
 """ plugin
 call plug#begin('~/.vim/plugged')
@@ -36,10 +33,6 @@ Plug 'yuki-yano/fern-preview.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'airblade/vim-gitgutter'
 
-" その他UI
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'jiangmiao/auto-pairs'
-
 " c-lang
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'Shougo/dein.vim'
@@ -53,7 +46,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'build': 'coc#util#install()'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'itchyny/lightline.vim'
 
 " ファイル検索
@@ -61,9 +54,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
-" VSCodeライクなカラースキームにする
-colorscheme codedark
 
 """ vim-airline
 " カラーテーマ
