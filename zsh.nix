@@ -9,6 +9,7 @@
       myHome-flake = "home-manager switch --flake .#myHome";
       dw = "/home/raise/workspace";
       dd = "/home/raise/.dotfiles";
+      python-run = "pipenv run python";
     };
   };
 }

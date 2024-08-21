@@ -4,7 +4,7 @@
     ./neovim.nix
     ./direnv.nix
     ./development.nix
-    ./python.nix
+    #./python.nix
     ./browser.nix
     ./apps.nix
     ./command.nix

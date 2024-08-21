@@ -7,6 +7,7 @@
         go
         deno
         nodejs
+	pipenv
         rust-bin.stable.latest.default
     ];
 }
